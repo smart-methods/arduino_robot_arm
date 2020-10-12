@@ -18,7 +18,7 @@ The robot arm has 5 joints only 4 joints can be fully controlled via ROS and Rvi
 ### Controlling the robot arm by joint_state_publisher
 ```$ roslaunch robot_arm_pkg check_motors.launch```
 
-You can also run this instruction to connect with hardware:
+You can also connect with hardware by running:
 
 ```$ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200```
 
@@ -27,7 +27,7 @@ You can also run this instruction to connect with hardware:
 ### Controlling the robot arm by Moveit and kinematics
 ```$ roslaunch moveit_pkg demo.launch```
 
-You can also run this instruction to connect with hardware:
+You can also connect with hardware by running:
 
 ```$ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200```
 
