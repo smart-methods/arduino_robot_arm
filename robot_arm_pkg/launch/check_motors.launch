@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- upload urdf -->
+  <param name="robot_description" textfile="$(find robot_arm_pkg)/urdf/arduino_robot_arm.urdf" />
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_arm_pkg)/launch/config.rviz" />
+
+  <!-- send joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="True"/>
+  </node>
+</launch>

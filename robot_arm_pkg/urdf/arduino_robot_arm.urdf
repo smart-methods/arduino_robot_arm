@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+<robot name="arduino_robot_arm">
+    <link name="base">
+        
+<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.01" />
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        </inertial>
+
+        <visual name="Base">
+            <origin xyz="0 0 0" rpy="1.5708 0 0" />
+            <geometry>
+                <mesh filename="package://robot_arm_pkg/meshes/stl/Base.stl" scale="0.00098 0.00098 0.00098" />
+            </geometry>
+        </visual>
+        <collision name="Base">
+            <origin xyz="-0.0029 0.00016 0.01165" rpy="3.14159 0 0" />
+            <geometry>
+                <cylinder radius="0.0592" length="0.05469" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="waist">
+        
+<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        </inertial>
+
+        <visual name="Waist">
+            <origin xyz="0 0 0" rpy="1.5708 0 0" />
+            <geometry>
+                <mesh filename="package://robot_arm_pkg/meshes/stl/Waist.stl" scale="0.00098 0.00098 0.00098" />
+            </geometry>
+        </visual>
+        <collision name="Waist.000">
+            <origin xyz="8e-05 -8e-05 0.00021" rpy="1.5708 0 0" />
+            <geometry>
+                <mesh filename="package://robot_arm_pkg/meshes/stl/Waist.001.stl" scale="0.00391 0.00391 0.00391" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="arm1">
+        
+<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        </inertial>
+
+        <visual name="Arm 01">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot_arm_pkg/meshes/stl/Arm 01.stl" scale="0.00098 0.00098 0.00098" />
+            </geometry>
+        </visual>
+        <collision name="Arm 01">
+            <origin xyz="-0.00032 0.05624 0.00439" rpy="0 0 0" />
+            <geometry>
+                <box size="0.04221 0.16277 0.02051" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="arm2">
+        
+<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        </inertial>
+
+        <visual name="Arm 02">
+            <origin xyz="0 0 0" rpy="-1.48894 -1.57209 1.57068" />
+            <geometry>
+                <mesh filename="package://robot_arm_pkg/meshes/stl/Arm 02.stl" scale="0.00098 0.00098 0.00098" />
+            </geometry>
+        </visual>
+        <visual name="Cube">
+            <origin xyz="-0.00255 0.0366 0.00196" rpy="-0.0887 1.57209 -1.57119" />
+            <geometry>
+                <mesh filename="package://robot_arm_pkg/meshes/stl/Cube.002.stl" scale="0.01172 0.01953 0.00781" />
+            </geometry>
+        </visual>
+        <collision name="Arm 02">
+            <origin xyz="-0.00436 0.05687 0.01375" rpy="-1.4891 -1.57209 1.57084" />
+            <geometry>
+                <box size="0.02681 0.16397 0.0384" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="gripper">
+        
+<inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.001" />
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        </inertial>
+
+        <visual name="Gripper">
+            <origin xyz="0 0 0" rpy="0.60119 -1.56847 -1.57014" />
+            <geometry>
+                <mesh filename="package://robot_arm_pkg/meshes/stl/Gripper.stl" scale="0.00391 0.00391 0.00391" />
+            </geometry>
+        </visual>
+        <collision name="Gripper.000">
+            <origin xyz="0.00024 -0.00025 0.00033" rpy="0.60128 -1.56847 -1.57014" />
+            <geometry>
+                <mesh filename="package://robot_arm_pkg/meshes/stl/Gripper.001.stl" scale="0.00391 0.00391 0.00391" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_joint" type="revolute">
+        <origin xyz="-0.00345 -1e-05 0.04449" rpy="0 0 0" />
+        <parent link="base" />
+        <child link="waist" />
+        <axis xyz="0 0 1.0" />
+        <limit lower="-1.571" upper="1.571" effort="1000.0" velocity="1.0" />
+    </joint>
+    <joint name="shoulder" type="revolute">
+        <origin xyz="0.00396 0.01369 0.03521" rpy="1.5708 0.03778 1.5708" />
+        <parent link="waist" />
+        <child link="arm1" />
+        <axis xyz="0 0 1.0" />
+        <limit lower="-1.571" upper="1.571" effort="1000.0" velocity="1.0" />
+    </joint>
+    <joint name="elbow" type="revolute">
+        <origin xyz="-7e-05 0.11689 -0.00792" rpy="-0.0013 -3.14159 0.03778" />
+        <parent link="arm1" />
+        <child link="arm2" />
+        <axis xyz="0 0 1.0" />
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="1.0" />
+    </joint>
+    <joint name="wrist" type="revolute">
+        <origin xyz="-0.00922 0.12639 -0.00514" rpy="3.14056 0 0" />
+        <parent link="arm2" />
+        <child link="gripper" />
+        <axis xyz="0 0 1.0" />
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="1.0" />
+    </joint>
+    
+<transmission name="trans_base_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="base_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_shoulder">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="shoulder">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="shoulder_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_elbow">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="elbow">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="elbow_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wrist">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>

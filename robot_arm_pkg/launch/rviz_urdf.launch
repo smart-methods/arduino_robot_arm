@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- upload urdf -->
+  <param name="robot_description" textfile="$(find robot_arm_pkg)/urdf/arduino_robot_arm.urdf" />
+
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_arm_pkg)/launch/urdf_config.rviz" />
+
+
+</launch>
