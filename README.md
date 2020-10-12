@@ -2,6 +2,7 @@
 ROS packages that can be used to plan and execute motion trajectories for a robot arm in simulation and real-life.
 
 
+
 These packages were tested under ROS kinetic and Ubuntu 16.04
 
 The robot arm uses Moveit plugin to apply kinematics by the KDL solver. These packages can be tested in the gazebo simulation tool and the real robot arm, where the ROS system and Arduino code share the ```/joint_states``` topic to control motors.
@@ -33,6 +34,6 @@ You can also run this instruction to connect with hardware:
 (Note: You may need to use ttyACM)
 
 
-or you just need to run the below instruction to use gazebo simulation
+or just you need to run the below instruction to use gazebo simulation
 
 ```$ roslaunch moveit_pkg demo_gazebo.launch```
