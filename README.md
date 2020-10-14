@@ -43,4 +43,5 @@ You can also connect with hardware by running:
 
 #### Simulation
 Run the following instruction to use gazebo
+
 ```$ roslaunch moveit_pkg demo_gazebo.launch```
