@@ -24,6 +24,14 @@ You can also connect with hardware by running:
 
 (Note: You may need to use ttyACM)
 
+#### Simulation
+Run the following instructions to use gazebo
+```
+$ roslaunch robot_arm_pkg check_motors.launch
+$ roslaunch robot_arm_pkg check_motors_gazebo.launch
+$ rosrun robot_arm_pkg joint_states_to_gazebo.py
+```
+
 ### Controlling the robot arm by Moveit and kinematics
 ```$ roslaunch moveit_pkg demo.launch```
 
@@ -33,7 +41,6 @@ You can also connect with hardware by running:
 
 (Note: You may need to use ttyACM)
 
-
-or just you need to run the below instruction to use gazebo simulation
-
+#### Simulation
+Run the following instruction to use gazebo
 ```$ roslaunch moveit_pkg demo_gazebo.launch```
