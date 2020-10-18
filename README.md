@@ -9,7 +9,7 @@ The robot arm uses Moveit plugin to apply kinematics by the KDL solver. These pa
 
 
 ## Dependencies
-run this instruction inside catkin_ws/src:
+run this instruction inside your workspace:
 
 ```$ rosdep install --from-paths src --ignore-src -r -y```
 
