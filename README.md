@@ -6,7 +6,23 @@ ROS packages that can be used to plan and execute motion trajectories for a robo
 These packages were tested under ROS kinetic and Ubuntu 16.04
 
 The robot arm uses Moveit plugin to apply kinematics by the KDL solver. These packages can be tested in the gazebo simulation tool and the real robot arm, where the ROS system and Arduino code share the ```/joint_states``` topic to control motors.
- 
+
+
+## Dependencies
+run this instruction inside catkin_ws/src:
+
+```$ rosdep install --from-paths src --ignore-src -r -y```
+
+make sure you installed all these packages:
+```
+$ sudo apt-get install ros-kinetic-moveit
+$ sudo apt-get install ros-kinetic-joint-state-publisher ros-kinetic-joint-state-publisher-gui
+$ sudo apt-get install ros-kinetic-gazebo-ros-control joint-state-publisher
+$ sudo apt-get install ros-kinetic-ros-controllers ros-kinetic-ros-control
+
+```
+
+
 ## Robot Arm
 The robot arm has 5 joints only 4 joints can be fully controlled via ROS and Rviz, the last joint (gripper) has a default motion executed from the Arduino code directly.
 ### Circuit diagram 
