@@ -32,23 +32,6 @@ def listener():
     rospy.spin()
 
 
-def talker():
-    pub = rospy.Publisher('arm_controller/command', JointTrajectory, queue_size=10)
-    rospy.init_node('trajectory')
-    rate = rospy.Rate(10) # 10hz
-    joints_str = JointTrajectory()
-    joints_str.header = Header()
-    joints_str.header.stamp = rospy.Time.now()
-    joints_str.joint_names = ['base_joint', 'shoulder', 'elbow', 'wrist']
-    point=JointTrajectoryPoint()
-    point.positions = [0.5, 0.5, 0.5, 0.5]
-    point.time_from_start = rospy.Duration(2)
-    joints_str.points.append(point)
-    while not rospy.is_shutdown():
-      joints_str.header.stamp = rospy.Time.now()
-      pub.publish(joints_str)
-      rospy.loginfo("position updated")
-      rate.sleep()
 
 if __name__ == '__main__':
     try:
