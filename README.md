@@ -19,7 +19,6 @@ $ sudo apt-get install ros-kinetic-moveit
 $ sudo apt-get install ros-kinetic-joint-state-publisher ros-kinetic-joint-state-publisher-gui
 $ sudo apt-get install ros-kinetic-gazebo-ros-control joint-state-publisher
 $ sudo apt-get install ros-kinetic-ros-controllers ros-kinetic-ros-control
-
 ```
 
 
