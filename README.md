@@ -3,7 +3,7 @@ ROS packages that can be used to plan and execute motion trajectories for a robo
 
 
 
-These packages were tested under ROS kinetic and Ubuntu 16.04
+These packages were tested under ROS kinetic and Ubuntu 16.04 and it works perfectly on ROS melodic
 
 The robot arm uses Moveit plugin to apply kinematics by the KDL solver. These packages can be tested in the gazebo simulation tool and the real robot arm, where the ROS system and Arduino code share the ```/joint_states``` topic to control motors.
 
