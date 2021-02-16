@@ -61,3 +61,86 @@ You can also connect with hardware by running:
 Run the following instruction to use gazebo
 
 ```$ roslaunch moveit_pkg demo_gazebo.launch```
+
+
+
+# pick and place by using OpenCV
+## Preparation 
+Download webcam extension for VirtualBox
+https://scribles.net/using-webcam-in-virtualbox-guest-os-on-windows-host/ 
+
+## Testing the camera and OpenCV
+
+Run color_thresholding.py to test the camera 
+
+Before running, find the camera index normally it is video0
+
+```$ ls -l /dev | grep video```
+
+If it is not, update line 8 in color_thresholding.py
+
+```8  cap=cv2.VideoCapture(0)```
+
+Then run 
+
+```$ python color_thresholding.py```
+
+## Using OpenCV with the robot arm in ROS
+###	In Real Robot
+- In a terminal run
+
+```$ roslaunch moveit_config_pkg demo.launch```
+
+this will run Rviz 
+
+
+- connect with Arduino:
+
+1. select the Arduino port to be used on Ubuntu system
+
+2. change the permissions (it might be ttyACM)
+
+	```$ ls -l /dev | grep ttyUSB```
+  
+	```$ sudo chmod -R 777 /dev/ttyUSB0```
+  
+3. upload the code from Arduino IDE
+
+```$ rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=115200```
+
+- In another terminal 
+
+```$ rosrun moveit_pkg get_pose_openCV.py```
+
+This will detect **blue** color and publish the x,y coordinates to /direction topic
+
+(Note: check the camera index and update the script if needed)
+
+- Open another terminal 
+
+```$ rosrun moveit_pkg move_group_node```
+
+This will subscribe to /direction topic and execute motion by using **Moveit move group**
+
+The pick and place actions are performed from the Arduino sketch directly. 
+
+
+### In simulation (Gazebo)
+- In a terminal run
+```$ roslaunch moveit_config_pkg demo_gazebo.launch```
+
+this will run Rviz and gazebo
+
+- In another terminal 
+```$ rosrun moveit_pkg get_pose_openCV.py```
+
+This will detect blue color and publish the x,y coordinates to /direction topic
+
+(Note: check the camera index and update the script if needed)
+
+- Open another terminal 
+```$ rosrun moveit_pkg move_group_node```
+
+This will subscribe to /direction topic and execute motion by using Moveit move group
+
+**We can’t visualize the pick and place actions in gazebo**
