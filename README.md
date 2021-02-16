@@ -62,7 +62,7 @@ Run the following instruction to use gazebo
 
 ```$ roslaunch moveit_pkg demo_gazebo.launch```
 
-
+***
 
 # pick and place by using OpenCV
 ## Preparation 
