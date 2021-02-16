@@ -64,7 +64,7 @@ Run the following instruction to use gazebo
 
 ***
 
-# pick and place by using OpenCV
+# Pick and place by using OpenCV
 ## Preparation 
 Download webcam extension for VirtualBox
 https://scribles.net/using-webcam-in-virtualbox-guest-os-on-windows-host/ 
