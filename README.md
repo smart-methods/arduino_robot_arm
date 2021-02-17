@@ -128,18 +128,21 @@ The pick and place actions are performed from the Arduino sketch directly.
 
 ### In simulation (Gazebo)
 - In a terminal run
+
 ```$ roslaunch moveit_pkg demo_gazebo.launch```
 
 this will run Rviz and gazebo
 
 - In another terminal 
+
 ```$ rosrun moveit_pkg get_pose_openCV.py```
 
 This will detect blue color and publish the x,y coordinates to /direction topic
 
 (Note: check the camera index and update the script if needed)
 
-- Open another terminal 
+- Open another terminal
+ 
 ```$ rosrun moveit_pkg move_group_node```
 
 This will subscribe to /direction topic and execute motion by using Moveit move group
