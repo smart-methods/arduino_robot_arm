@@ -90,7 +90,7 @@ Then run
 ###	In Real Robot
 - In a terminal run
 
-```$ roslaunch moveit_config_pkg demo.launch```
+```$ roslaunch moveit_pkg demo.launch```
 
 this will run Rviz 
 
@@ -128,7 +128,7 @@ The pick and place actions are performed from the Arduino sketch directly.
 
 ### In simulation (Gazebo)
 - In a terminal run
-```$ roslaunch moveit_config_pkg demo_gazebo.launch```
+```$ roslaunch moveit_pkg demo_gazebo.launch```
 
 this will run Rviz and gazebo
 
