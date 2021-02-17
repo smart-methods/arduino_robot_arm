@@ -137,7 +137,7 @@ this will run Rviz and gazebo
 
 ```$ rosrun moveit_pkg get_pose_openCV.py```
 
-This will detect blue color and publish the x,y coordinates to /direction topic
+This will detect **blue** color and publish the x,y coordinates to /direction topic
 
 (Note: check the camera index and update the script if needed)
 
