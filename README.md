@@ -64,9 +64,9 @@ Run the following instructions to use gazebo
 ```
 $ roslaunch robot_arm_pkg check_motors.launch
 $ roslaunch robot_arm_pkg check_motors_gazebo.launch
+$ sudo chmod +x ~/catkin_ws/src/arduino_robot_arm/robot_arm_pkg/scripts/joint_states_to_gazebo.py
 $ rosrun robot_arm_pkg joint_states_to_gazebo.py
 ```
-(Note:  you may need to make the python script executable by changing the permission)
 
 ### Controlling the robot arm by Moveit and kinematics
 ```$ roslaunch moveit_pkg demo.launch```
