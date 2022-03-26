@@ -67,6 +67,7 @@ $ roslaunch robot_arm_pkg check_motors_gazebo.launch
 $ rosrun robot_arm_pkg joint_states_to_gazebo.py
 ```
 (You may need to change the permission)
+
 ```$ sudo chmod +x ~/catkin_ws/src/arduino_robot_arm/robot_arm_pkg/scripts/joint_states_to_gazebo.py```
 
 
