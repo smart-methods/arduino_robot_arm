@@ -56,7 +56,7 @@ to install run ```$ sudo ./install.sh``` after unzipping the folder
 
 - Launch the Arduino IDE
 
-- Install the arduino pacakge and ros library
+- Install the arduino package and ros library
 http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 
 - Make sure to change the port permission before uploading the Arduino code
