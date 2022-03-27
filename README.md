@@ -49,7 +49,7 @@ The robot arm has 5 joints only 4 joints can be fully controlled via ROS and Rvi
 ### Robot initial positions
 ![positions](positions.png)
 
-## Configuring Arduino in ROS
+## Configuring Arduino with ROS
 - Install Arduino IDE in Ubuntu
 https://www.arduino.cc/en/software
 to install run ```$ sudo ./install.sh``` after unzipping the folder
